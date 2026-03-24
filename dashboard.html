@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>MindBalance Dashboard</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+
+<body>
+
+<div class="sidebar">
+
+<h2>MindBalance</h2>
+
+<a href="dashboard.html">Dashboard</a>
+<a href="tareas.html">Tareas</a>
+<a href="chat.html">Chat de apoyo</a>
+<a href="ayuda.html">Ayuda profesional</a>
+
+<button onclick="logout()">Cerrar sesión</button>
+
+</div>
+
+<div class="content">
+
+<h1 id="saludo">Hola</h1>
+<h2>Dashboard</h2>
+
+<div class="card">
+<h3>Resumen semanal</h3>
+<p>Materias: 5</p>
+<p>Tareas pendientes: 4</p>
+<p>Exámenes esta semana: 2</p>
+<p><strong>Carga académica: ALTA</strong></p>
+</div>
+
+</div>
+
+<script>
+
+let usuario = localStorage.getItem("usuario");
+
+if(usuario == null){
+
+window.location.href="login.html";
+
+}
+
+document.getElementById("saludo").innerText =
+"Hola "+usuario;
+
+function logout(){
+
+localStorage.removeItem("usuario");
+
+window.location.href="login.html";
+
+}
+
+</script>
+
+</body>
+</html>
