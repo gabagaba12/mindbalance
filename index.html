@@ -59,7 +59,7 @@ margin:10px;
 
 function login(){
 
-let user = documenL.getElementById("usuario").value;
+let user = document.getElementById("usuario").value;
 
 if(user === ""){
 
@@ -69,7 +69,7 @@ return;
 
 }
 
-localStorage.getItem("usuario", user);
+localStorage.setItem("usuario", user);
 
 window.location.href="dashboard.html";
 
